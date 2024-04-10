@@ -4,6 +4,10 @@ komputiloj.lib.writeCommand {
     name = "moo";
     runtimeInputs = [ nixpkgsCurrent.packages.cowsay ];
     text = ''
-        cowsay 'MOO!'
+        if [[ $# -eq 0 ]]; then
+            cowsay 'MOO!'
+        else
+            cowsay -e oO -- "$@"
+        fi
     '';
 }
