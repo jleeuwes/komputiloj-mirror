@@ -77,7 +77,7 @@ in rec {
 			hello-infra.nixosModules."70004-known-host"
 			sleutel.modules.all_in_one
 			wolk.modules.all_in_one
-			notie.modules.all_in_one
+			# notie.modules.all_in_one
 			thee.modules.all_in_one
 			warpzone.nixosModules.JumpHost
 		];
