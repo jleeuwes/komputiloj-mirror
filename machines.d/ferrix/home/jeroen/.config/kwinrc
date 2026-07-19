@@ -11,10 +11,6 @@ CommandAllWheel=Previous/Next Desktop
 
 [NightColor]
 Active=true
-EveningBeginFixed=2130
-# REMOVED
-# REMOVED
-Mode=Times
 NightTemperature=3000
 
 [Plugins]
