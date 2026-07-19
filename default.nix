@@ -66,7 +66,7 @@ let
         
         machines = importDirAndApply ./machines.d (capsules_and_boltons // {
             inherit (new_capsules) komputiloj-definitions
-            nixos mailserver nixos_future hello-infra-definitions hello-infra warpzone notie;
+            nixos_25_11 nixos mailserver nixos_future hello-infra-definitions hello-infra warpzone notie;
         });
     };
     real_capsules = {
@@ -175,8 +175,8 @@ let
         
         # Most of the time, we don't want to depend on a specific nixos version,
         # we just want the latest. We can use these aliases in that case.
-        nixos = alias new_capsules.nixos_25_11;
-        mailserver = alias new_capsules.mailserver_25_11;
+        nixos = alias new_capsules.nixos_26_05;
+        mailserver = alias new_capsules.mailserver_26_05;
 
         nixos_future = import ./capsules/nixos_future {
             inherit (new_capsules) platform nixos nixos_25_05;

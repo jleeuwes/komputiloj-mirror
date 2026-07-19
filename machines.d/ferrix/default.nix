@@ -1,4 +1,6 @@
-{ komputiloj-definitions, komputiloj, hello-infra-definitions, nixos, nixos_future, warpzone, ... }:
+{ komputiloj-definitions, komputiloj, hello-infra-definitions, nixos_25_11, warpzone, ... }:
+let nixos = nixos_25_11; # TODO upgrade
+in
 rec {
 
     nixosSystem = nixos.lib.nixosSystem {

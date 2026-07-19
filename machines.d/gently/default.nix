@@ -622,13 +622,16 @@ in rec {
 					'';
 					default = true;
 				};
+				"mail.radstand.nl" = {
+					enableACME = true;
+				};
 			};
 		};
 
 		mailserver = {
 			enable = true;
 
-			stateVersion = 3;
+			stateVersion = 5; # TODO remove /mnt/storage/live/mail/sieve someday
 			
 			# We won't get nameservers from DHCP if this if true (the default)!
 			# See https://discourse.nixos.org/t/how-to-use-a-nameserver-with-a-static-networking-configuration/10932/3
@@ -639,6 +642,7 @@ in rec {
 	
 			# TODO get rid of nginx welcome page on mail.radstand.nl
 			fqdn = "mail.radstand.nl";
+			x509.useACMEHost = "mail.radstand.nl";
 			sendingFqdn = "gently.radstand.nl";
 			domains = [ "gorinchemindialoog.nl" "radstand.nl" ];
 
@@ -654,14 +658,15 @@ in rec {
 				# "@radstand.nl" = "jeroen@lwstn.eu";
 			};
 
-			indexDir = "/var/mail-indexes";
-			mailDirectory = "/mnt/storage/live/mail/vmail"; # TODO make relevant service depend on this mount!
-			sieveDirectory = "/mnt/storage/live/mail/sieve"; # TODO not sure if this is persistent state
-			vmailGroupName = "vmail";
-			vmailUserName = "vmail";
-			vmailUID = 70002;
+			storage = {
+				group = "vmail";
+				owner = "vmail";
+				uid = 70002;
+                gid = 70002;
+				path = "/mnt/storage/live/mail/vmail"; # TODO make relevant service depend on this mount!
+			};
 
-			certificateScheme = "acme-nginx"; # let's hope this uses the regular letsencrypt infrastructure of NixOS so it doesn't clash with nginx
+			indexDir = "/var/mail-indexes";
 		};
 		systemd.services.postfix = {
 			needsStorageVolume = "requires";
