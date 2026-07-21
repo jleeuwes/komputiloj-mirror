@@ -64,10 +64,11 @@ in {
                     NOTICE_ON_SUCCESS = true;
                 };
                 security = {
-                    # Force 2fa. Not yet working at time of writing,
-                    # but will kick in from Forgejo 13.
+                    # Force 2fa.
                     # In case of lost device, restore access with: thee-forgejo admin user reset-mfa -u USERNAME
-                    GLOBAL_TWO_FACTOR_REQUIREMENT = "all";
+                    # Disabled because it blocks our bot users from pushing commits using SSH keys :(
+                    # GLOBAL_TWO_FACTOR_REQUIREMENT = "all";
+                    
                     # PASSWORD_HASH_ALGO = "bcrypt$12";
                 };
                 other = {
