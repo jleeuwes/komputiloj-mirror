@@ -215,10 +215,10 @@ let
         warpzone = import ./capsules/warpzone {
             inherit (new_capsules) boltons nixos komputiloj-definitions;
         };
-        komputiloj-sources = import ./capsules/komputiloj-sources {
-            inherit (new_capsules) nixos;
-        };
-        hello-infra-entrypoint = import new_capsules.komputiloj-sources.portable.packages.hello-infra {
+        # NOTE: a separate sources capsule is not very useful, we probably
+        # should put the sources in this top-level capsule
+        komputiloj-sources = import ./capsules/komputiloj-sources;
+        hello-infra-entrypoint = import new_capsules.komputiloj-sources.sources.hello-infra {
             inherit (new_capsules) boltons platform
                 komputiloj-definitions komputiloj-privata;
         };
