@@ -110,6 +110,17 @@ rec {
         # Enable read-write NTFS support:
         boot.supportedFilesystems = [ "ntfs" ];
 
+        services.journald = {
+            # Don't let journald eat up my SSD for no reason.
+            # See https://news.ycombinator.com/item?id=49290215 and https://github.com/systemd/systemd/issues/40262
+            # Logs won't survive restarts, but I hardly need that,
+            # except maybe if I would want to investigate and report
+            # an intermittent GPU driver crash I'm having.
+            # Note that this also disables `journalctl --user` which I only
+            # found out about existing just now.
+            storage = "volatile";
+        };
+
         networking = {
             hostName = "ferrix";
             networkmanager.enable = true; # wireless through GUI
