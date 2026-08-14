@@ -119,21 +119,6 @@ self = {
             aarch64-linux = gensystem "aarch64-linux";
         };
     
-    # TODO get rid of this; it is ergonomic but we rather not deal with
-    # localSystem in nix code. We should move platform-specific handling
-    # to nenio commands so we can make capsules pure and don't need to pass the
-    # localSystem everywhere.
-    qemu = warn "DEPRECATED: use native instead of qemu" (let
-        checksystem = system:
-            if elem system platform.emulatedSystems
-            then system
-            else throw "Please add ${system} to binfmt.emulatedSystem" # TODO make this a warning?
-            ;
-        in removeAttrs {
-            x86_64-linux  = native.${checksystem "x86_64-linux"};
-            aarch64-linux = native.${checksystem "aarch64-linux"};
-        } [ localSystem ]);
-
     # TODO: make all combinations of different system pairs,
     # so we don't need localSystem here.
     cross.${localSystem} = let
