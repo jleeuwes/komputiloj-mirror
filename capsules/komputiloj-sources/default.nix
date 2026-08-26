@@ -43,8 +43,8 @@ self = {
                 url = "ssh://gitea@thee.radstand.nl/hello/infra.git";
                 submodules = true;
                 ref = "main";
-                rev = "3f31bd0dcef8af8380e916b90e72973ecdaa2086";
-                narHash = "sha256-xjGbGzISklqp5dT+8aPWCGXI8E7NMG+nEIPlUjQsPUI=";
+                rev = "6ed1816db95fbc5cda046e411868c5793fa87a82";
+                narHash = "sha256-Mj+0FSesY6Ul4WN6EqzZa7DNGWy+kelvtVqXl7udkRE=";
             };
         };
         nixos_26_05 = {
