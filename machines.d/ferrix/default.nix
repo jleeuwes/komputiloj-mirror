@@ -261,7 +261,7 @@ rec {
             
             komputiloj.packages.wachtwoord
 
-            komputiloj.packages.mdview # packaged 'alias' for reading md files
+            komputiloj.packages.markdowntools
         ];
 
         environment.wordlist = {

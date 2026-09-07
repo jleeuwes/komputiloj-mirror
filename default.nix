@@ -32,7 +32,7 @@ let
             tipctl = callPackage ./pkgs/tipctl;
             dekstop = callPackage ./pkgs/dekstop;
             rip = callPackage ./pkgs/rip;
-            mdview = callPackage ./pkgs/mdview;
+            markdowntools = callPackage ./pkgs/markdowntools;
         };
 
         lib = {
