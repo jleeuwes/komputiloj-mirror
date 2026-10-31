@@ -262,6 +262,7 @@ rec {
             komputiloj.packages.wachtwoord
 
             komputiloj.packages.markdowntools
+            komputiloj.packages.yt-dlp
         ];
 
         environment.wordlist = {

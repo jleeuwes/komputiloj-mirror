@@ -33,6 +33,7 @@ let
             dekstop = callPackage ./pkgs/dekstop;
             rip = callPackage ./pkgs/rip;
             markdowntools = callPackage ./pkgs/markdowntools;
+            yt-dlp = callPackageWith capsules.nixpkgsCurrent.packages ./pkgs/yt-dlp {};
         };
 
         lib = {
