@@ -157,7 +157,7 @@ immutability=1
 plugin=org.kde.plasma.printmanager
 
 [Containments][2][Applets][7][Applets][17][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][18]
 immutability=1
