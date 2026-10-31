@@ -151,15 +151,6 @@ let
                 };
             };
         };
-        nixos_25_05 = import ./capsules/nixos_25_05 {
-            inherit (new_capsules) platform boltons;
-        };
-        mailserver_25_05 = import ./sources.d/mailserver_25_05/capsule.nix {
-            # NOTE: this capsule doesn't have updatable pins, it needs
-            # update-sources (but we're fixing that with the next nixos version,
-            # see below)
-            inherit (new_capsules) platform;
-        };
         nixos_25_11 = import ./capsules/nixos_25_11 {
             inherit (new_capsules) platform boltons;
         };
@@ -179,7 +170,7 @@ let
         mailserver = alias new_capsules.mailserver_26_05;
 
         nixos_future = import ./capsules/nixos_future {
-            inherit (new_capsules) platform nixos nixos_25_05;
+            inherit (new_capsules) platform nixos;
         };
 
         notie = import ./capsules/notie {
