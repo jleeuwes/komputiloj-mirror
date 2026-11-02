@@ -10,6 +10,10 @@ in command-platform.local.packageBuilders.writeCommand {
     runtimeInputs = [ nixos.local.legacyPackages.openssh ];
     text = ''
         new_toplevel=${machine.nixosSystem.config.system.build.toplevel}
+        if [ ! -f "$new_toplevel"/nixos-version ]; then
+            echo "This config is broken. Please investigate." >&2
+            exit 1
+        fi
 
         nix-copy-closure \
             --to ${esc sshTarget} \

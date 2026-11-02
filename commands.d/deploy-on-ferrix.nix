@@ -14,6 +14,10 @@ in command-platform.local.packageBuilders.writeCommand {
         # TODO maybe we should use https://nixos.wiki/wiki/Nixos-rebuild
         # instead of doing the steps ourselves? Not sure.
         new_toplevel=${machine.nixosSystem.config.system.build.toplevel}
+        if [ ! -f "$new_toplevel"/nixos-version ]; then
+            echo "This config is broken. Please investigate." >&2
+            exit 1
+        fi
         sudo nix-env -p /nix/var/nix/profiles/system --set "$new_toplevel"
         sudo "$new_toplevel"/bin/switch-to-configuration switch
     '';
