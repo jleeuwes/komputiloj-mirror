@@ -1,6 +1,4 @@
-{ komputiloj-definitions, komputiloj, hello-infra-definitions, nixos_25_11, warpzone, ... }:
-let nixos = nixos_25_11; # TODO upgrade
-in
+{ komputiloj-definitions, komputiloj, hello-infra-definitions, nixos, warpzone, ... }:
 rec {
 
     nixosSystem = nixos.lib.nixosSystem {
@@ -97,12 +95,12 @@ rec {
         # https://wiki.nixos.org/wiki/Fwupd for BIOS updates
         services.fwupd.enable = true;
 
-        systemd.sleep.extraConfig = ''
-            AllowSuspend=no
-            AllowHibernation=yes
-            AllowHybridSleep=no
-            AllowSuspendThenHibernate=no
-        '';
+        systemd.sleep.settings.Sleep = {
+            AllowSuspend="no";
+            AllowHibernation="yes";
+            AllowHybridSleep="no";
+            AllowSuspendThenHibernate="no";
+        };
 
         # Make /tmp in-memory:
         boot.tmp.useTmpfs = true;
@@ -214,6 +212,7 @@ rec {
             # openraPackages.engines.bleed # Red Alert
             
             # android-studio
+            android-tools # adb
             apktool dex2jar
 
             # LaTeX and PDF:
@@ -515,9 +514,6 @@ rec {
         #     # nog niet beschikbaar (eens updaten!)
         #     # allowAnyUser = true; # of moeten we rechten via systemd regelen?
         # };
-
-        # Enable adb group and udev rules and such:
-        programs.adb.enable = true;
 
         # Define a user account. Don't forget to set a password with ‘passwd’.
         users.users.jeroen = {

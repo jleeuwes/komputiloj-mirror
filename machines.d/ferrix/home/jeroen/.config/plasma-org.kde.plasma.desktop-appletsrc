@@ -18,15 +18,14 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=657
+DialogWidth=942
 
 [Containments][1][General]
 positions={"1440x960":[]}
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=/nix/store/21nkzhzxpwiy14xql0zx9nwsimrksc4j-plasma-workspace-wallpapers-6.2.5/share/wallpapers/SafeLanding/
-PreviewImage=/nix/store/21nkzhzxpwiy14xql0zx9nwsimrksc4j-plasma-workspace-wallpapers-6.2.5/share/wallpapers/SafeLanding/
+Image=file:///nix/store/6g5bz3hl6m7wx6gh2zfn09c1l80v4f36-plasma-workspace-wallpapers-6.6.6/share/wallpapers/SafeLanding/
 SlidePaths=/nix/store/5la157c0ia4wdpv1rjrxr4dzz63f59x5-breeze-6.2.5/share/wallpapers/,/run/current-system/sw/share/wallpapers/
 
 [Containments][2]
@@ -43,7 +42,6 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][19][Configuration]
-PreloadWeight=100
 popupHeight=451
 popupWidth=560
 
@@ -64,7 +62,6 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][28][Configuration]
-PreloadWeight=100
 popupHeight=509
 popupWidth=665
 
@@ -116,15 +113,9 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.clipboard
 
-[Containments][2][Applets][7][Applets][10][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][11]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
-
-[Containments][2][Applets][7][Applets][11][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][12]
 immutability=1
@@ -134,15 +125,9 @@ plugin=org.kde.plasma.manage-inputmethod
 immutability=1
 plugin=org.kde.plasma.notifications
 
-[Containments][2][Applets][7][Applets][13][Configuration]
-PreloadWeight=65
-
 [Containments][2][Applets][7][Applets][14]
 immutability=1
 plugin=org.kde.kscreen
-
-[Containments][2][Applets][7][Applets][14][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][15]
 immutability=1
@@ -156,15 +141,9 @@ plugin=org.kde.plasma.keyboardlayout
 immutability=1
 plugin=org.kde.plasma.printmanager
 
-[Containments][2][Applets][7][Applets][17][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][18]
 immutability=1
 plugin=org.kde.plasma.volume
-
-[Containments][2][Applets][7][Applets][18][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][18][Configuration][General]
 migrated=true
@@ -173,22 +152,13 @@ migrated=true
 immutability=1
 plugin=org.kde.plasma.battery
 
-[Containments][2][Applets][7][Applets][21][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][22]
 immutability=1
 plugin=org.kde.plasma.brightness
 
-[Containments][2][Applets][7][Applets][22][Configuration]
-PreloadWeight=65
-
 [Containments][2][Applets][7][Applets][23]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
-
-[Containments][2][Applets][7][Applets][23][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][23][Configuration][General]
 currentDetailsTab=details
@@ -197,15 +167,9 @@ currentDetailsTab=details
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
-[Containments][2][Applets][7][Applets][25][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][26]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
-
-[Containments][2][Applets][7][Applets][26][Configuration]
-PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][29]
 immutability=1
@@ -218,9 +182,6 @@ plugin=org.kde.plasma.cameraindicator
 [Containments][2][Applets][7][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
-
-[Containments][2][Applets][7][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][General]
 extraItems=org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.weather

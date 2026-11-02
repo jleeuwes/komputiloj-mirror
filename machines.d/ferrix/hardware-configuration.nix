@@ -14,7 +14,13 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4c1ae7fa-0093-4c6a-8713-c64965d831b0";
+    {
+      # originally generated value:
+      # device = "/dev/disk/by-uuid/4c1ae7fa-0093-4c6a-8713-c64965d831b0";
+      # handmatige wijziging op basis van de release notes van NixOS 26.05:
+      device = "/dev/mapper/luks-22dd6a78-2cc0-4c7f-996a-cedb57aaf34c";
+      # TODO: opnieuw genereren na upgrade om dit weer op te schonen
+      
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
