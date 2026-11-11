@@ -106,6 +106,8 @@ qr-open-webcam() {
 	fi
 }
 
+alias wonderhop='nix-shell -p chromium --run "chromium --password-store=basic --incognito --app=https://wonderhop.io"'
+
 if [[ -e ~/.plan ]]; then
 	cat ~/.plan
 fi
